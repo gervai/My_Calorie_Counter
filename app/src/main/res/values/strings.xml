@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">My Calorie Counter</string>
+
+
+    <string name="you_got">You got</string>
+
+    <string name="material_calendar_monday">Mon</string>
+    <string name="material_calendar_tuesday">Tue</string>
+    <string name="material_calendar_wednesday">Wed</string>
+    <string name="material_calendar_thursday">Thu</string>
+    <string name="material_calendar_friday">Fri</string>
+    <string name="material_calendar_saturday">Sat</string>
+    <string name="material_calendar_sunday">Sun</string>
+
+    <array name="material_calendar_months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </array>
+
+    <string name="material_calendar_today_button">Today</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Cancel</string>
+    <string name="you_lost">You lost</string>
+    <string name="empty">___</string>
+    <string name="cal">cal</string>
+    <string name="input_new_food">Input new food</string>
+    <string name="choose_from_list">Choose from list</string>
+    <string name="exercise">Exercise :</string>
+    <string name="lost_calories_10mins">Lost Calories(10mins) :</string>
+    <string name="calories_per_100g">Calories per 100g :</string>
+    <string name="history">History</string>
+    <string name="choose_date">Choose date</string>
+
+    <string name="cal_today">cal today</string>
+    <string name="cal_in_a_day">cal in a day</string>
+    <string name="you_now_get">You now get</string>
+    <string name="kg">Kg</string>
+    <string name="enter_the_weight_you_hope">Enter the weight you hope</string>
+    <string name="move">Move</string>
+    <string name="eat">Eat</string>
+    <string name="record">Record</string>
+    <string name="_1_calculate">1. calculate</string>
+    <string name="_2_add_to_histry">2. add to histry</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_productlist">Product list</string>
+    <string name="menu_activitylist">Activity list</string>
+    <string name="menu_fooddiary">Food diary</string>
+    <string name="menu_calculator">Calorie Calculator</string>
+    <string name="menu_communication">Communication</string>
+    <string name="menu_logout">LogOut</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="menu_settings">Settings</string>
+    <string name="total_cals">Total calorie consumption:</string>
+    <string name="average_cals">Average calorie consumption per day:</string>
+    <string name="total_time">Total overall consumption time:</string>
+    <string name="log_button">View Calorie Log</string>
+    <string name="title_activity_display_log">Calorie Log</string>
+    <string name="add_new_log_entry">Add new entry</string>
+    <string name="title_activity_add_new_entry">New Calorie Log Entry</string>
+    <string name="date">Date:</string>
+    <string name="description">Description:</string>
+    <string name="total_calories">Total calories:</string>
+    <string name="calories_per_weight">Calories per weight/volume/serving:</string>
+    <string name="per_weight">Per weight/volume/serving:</string>
+    <string name="total_weight_consumed">Total weight/volume/serving consumed:</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section1">Section 1</string>
+    <string name="submit_button">Submit</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="hint_total_weight">i.e. 200g</string>
+    <string name="hint_per_weight">i.e. 65g</string>
+    <string name="hint_cal_per_weight">i.e. 220 Cal</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="back_button">Back</string>
+    <string name="quit_button">Quit</string>
+    <string name="remove_list_item">x</string>
+</resources>

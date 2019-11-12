@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "611879508994",
+    "firebase_url": "https://my-calorie-counter-6a86c.firebaseio.com",
+    "project_id": "my-calorie-counter-6a86c",
+    "storage_bucket": "my-calorie-counter-6a86c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611879508994:android:8c8806ea7a48131f1e5b1b",
+        "android_client_info": {
+          "package_name": "edu.ktu.calorie_counter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611879508994-r9eoh96i6vf022ami72nh78jd5ricp4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.ktu.calorie_counter",
+            "certificate_hash": "59ba8a4d0af8d2cc567fbb51cb154794628d73b7"
+          }
+        },
+        {
+          "client_id": "611879508994-qoiqk5k8dpmtuoiqmaqa9qnrmpd0i5b2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK3Yl3SahNh_gEelr1J9U8Ze28_PSN5iQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611879508994-qoiqk5k8dpmtuoiqmaqa9qnrmpd0i5b2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
