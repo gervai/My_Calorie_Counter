@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductListActivity">
+    tools:context=".ProductListActivity"
+    android:background="@drawable/pavv">
 
     <include layout="@layout/content_productlist_screen"/>
 

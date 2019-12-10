@@ -5,12 +5,12 @@
     <item android:id="@+id/action_search"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always"
         app:actionViewClass="android.widget.SearchView"/>
 
     <item
-        android:id="@+id/sorting"
-        android:title="Sort"/>
+        android:id="@+id/home"
+        android:title="Home"/>
 
     <item
         android:id="@+id/action_logout"

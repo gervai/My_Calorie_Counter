@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     android:layout_margin="5dp"
     app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="@android:color/holo_red_light"
+    app:cardBackgroundColor="#90FF5722"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,8 +24,8 @@
         android:layout_margin="5dp"
         android:textSize="15dp"
         android:textColor="@android:color/white"
-        android:text="Description"
-        android:id="@+id/desc"
+        android:text="Calorie"
+        android:id="@+id/calorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     </LinearLayout>

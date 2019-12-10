@@ -5,44 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background"
+    android:background="@drawable/pavv"
     android:padding="20dp">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="220dp"
-        android:layout_height="361dp"
+        android:layout_width="221dp"
+        android:layout_height="188dp"
         android:layout_above="@+id/register_btn"
         android:layout_alignParentTop="true"
-        android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="85dp"/>
+        android:layout_marginBottom="54dp"
+        android:src="@drawable/logo" />
 
     <Button
         android:id="@+id/register_btn"
-        android:text="Register"
-        android:background="@drawable/custom_button"
         android:layout_width="270dp"
         android:layout_height="60dp"
         android:layout_above="@+id/login_btn"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="79dp"
+
+        android:layout_marginLeft="79dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#FF26E9"
+        android:shadowDx="-1"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/login_btn"
-        android:text="Login"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_button"
-        android:layout_width="270dp"
-        android:layout_height="60dp"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="79dp"
+
+        android:layout_marginLeft="79dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#FF26E9"
+        android:shadowDx="-1"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
 </RelativeLayout>

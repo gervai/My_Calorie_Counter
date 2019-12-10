@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     tools:context=".HomeActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/pavv">
 
     <RelativeLayout
         android:layout_weight="2"
@@ -20,7 +20,9 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/playball"
             android:text="Welcome!"
-            android:textSize="40dp" />
+            android:textColor="#FF5722"
+            android:textSize="50dp"
+            app:drawableTint="#FF5722" />
 
     </RelativeLayout>
 
@@ -43,20 +45,15 @@
             android:layout_marginBottom="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            android:id="@+id/cardViewProfile">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+            android:id="@+id/cardViewProfile"
+            android:src="@drawable/btnprofile"
+            app:cardBackgroundColor="#70FD8F08">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/profilelogo"
+                    android:src="@drawable/btnprofile"
                     android:layout_gravity="center"/>
-            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <!--Card 2-->
@@ -70,12 +67,13 @@
             android:layout_marginBottom="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            android:id="@+id/cardCalculator">
+            android:id="@+id/cardCalculator"
+            app:cardBackgroundColor="#309C27B0">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/calculatorlogo"
+                android:src="@drawable/btncal"
                 android:layout_gravity="center"/>
         </androidx.cardview.widget.CardView>
 
@@ -90,32 +88,13 @@
             android:layout_marginBottom="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            android:id="@+id/cardProductList">
+            android:id="@+id/cardProductList"
+            app:cardBackgroundColor="#7003A9F4">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/productlistlogo"
-                android:layout_gravity="center"/>
-        </androidx.cardview.widget.CardView>
-
-        <!--Card 4-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            android:id="@+id/cardActivitiesList">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/activitieslistlogo"
+                android:src="@drawable/btnproduct"
                 android:layout_gravity="center"/>
         </androidx.cardview.widget.CardView>
 
@@ -130,12 +109,13 @@
             android:layout_marginBottom="16dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp"
-            android:id="@+id/cardFoodDiary">
+            android:id="@+id/cardFoodDiary"
+            app:cardBackgroundColor="#80FFF53B">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/fooddiarylogo"
+                android:src="@drawable/btnfood"
                 android:layout_gravity="center"/>
         </androidx.cardview.widget.CardView>
 
@@ -145,12 +125,42 @@
             android:layout_height="0dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="#70F44336"
+            android:id="@+id/cardGoogleFit">
+
+            <ImageView
+                android:layout_width="172dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+                android:src="@drawable/btngoogle" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="#70F44336"
+            android:id="@+id/cardShare">
+
+            <ImageView
+                android:layout_width="119dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_share" />
         </androidx.cardview.widget.CardView>
+
+
 
     </GridLayout>
 

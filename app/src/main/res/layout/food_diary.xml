@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pavv"
+    >
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center_horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:background="#80FF9800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/weightRRRR"
+                style="@style/diary_table"
+                android:gravity="right"
+                android:hint="Weight"/>
+            <TextView
+                style="@style/diary_table"
+                android:gravity="left"
+                android:text="kg"/>
+            <TextView
+                android:id="@+id/genderRRRRR"
+                style="@style/diary_table"
+                android:gravity="center"
+                android:hint="Gender"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/diary_table"
+                android:gravity="center"
+                android:text="Got"/>
+
+            <TextView
+                style="@style/diary_table"
+                android:layout_width="63dp"
+                android:gravity="center"
+                android:text="Spent" />
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_share" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/diary_calorie_get"
+                style="@style/diary_table"
+                android:gravity="center"
+                android:hint="875 kcal"/>
+            <TextView
+                android:id="@+id/diary_calorie_spend"
+                style="@style/diary_table"
+                android:gravity="center"
+                android:hint="875 kcal"/>
+        </TableRow>
+    </TableLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="10dp"
+        app:queryHint="Enter date (DD-MM-YYYY)"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="421dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewBreakfastAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_add" />
+
+            <TextView
+                android:id="@+id/textViewHeadlineBreakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What I eat today?"
+                android:textSize="18sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

@@ -16,10 +16,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +56,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
     String storagePath = "Users_profile_Img/";
 
     ImageView avatarTv;
-    TextView nameTv, emailTv, weightTv, heightTv;
+    TextView nameTv, emailTv, weightTv, heightTv, gendreTv;
     FloatingActionButton fab;
 
     ProgressDialog pd;
@@ -92,6 +96,7 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         emailTv = findViewById(R.id.emailTv);
         weightTv = findViewById(R.id.weightTv);
         heightTv = findViewById(R.id.heightTv);
+        gendreTv = findViewById(R.id.gendreTv);
         fab = findViewById(R.id.fab);
 
         pd = new ProgressDialog(ProfileUpdateActivity.this);
@@ -106,12 +111,14 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                     String email = ""+ ds.child("email").getValue();
                     String weight = ""+ ds.child("weight").getValue();
                     String height = ""+ ds.child("height").getValue();
+                    String gendre = ""+ ds.child("gender").getValue();
                     String image = ""+ ds.child("image").getValue();
 
                     nameTv.setText(name);
                     emailTv.setText(email);
                     weightTv.setText(weight);
                     heightTv.setText(height);
+                    gendreTv.setText(gendre);
                     try {
                         Picasso.get().load(image).into(avatarTv);
                     }
@@ -158,7 +165,8 @@ public class ProfileUpdateActivity extends AppCompatActivity {
     }
 
     private void showEditProfileDialog() {
-        String options[] = {"Edit Profile Picture", "Edit name", "Edit weight", "Edit height"};
+        String options[] = {"Edit profile picture", "Edit name", "Edit weight",
+                "Edit height","Edit gender (female or male)"};
         AlertDialog.Builder builder = new AlertDialog.Builder(ProfileUpdateActivity.this);
         builder.setTitle("Choose Action");
         builder.setItems(options, new DialogInterface.OnClickListener() {
@@ -180,6 +188,10 @@ public class ProfileUpdateActivity extends AppCompatActivity {
                 else if (which == 3){
                     pd.setMessage("Updating Height");
                     showNameWeightHeightUpdateDialog("height");
+                }
+                else if (which == 4){
+                    pd.setMessage("Updating gender");
+                    showNameWeightHeightUpdateDialog("gender");
                 }
             }
         });
@@ -378,5 +390,40 @@ public class ProfileUpdateActivity extends AppCompatActivity {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, IMAGE_PICK_GALLERY_CODE);
+    }
+
+    /*Atsijungimas*/
+    private void checkUserStatus() {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null) {
+        } else {
+            startActivity(new Intent(ProfileUpdateActivity.this, MainActivity.class));
+            finish();
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.home) {
+            goHome();
+            return true;
+        }
+        if (id == R.id.action_logout) {
+            firebaseAuth.signOut();
+            checkUserStatus();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void goHome() {
+        startActivity(new Intent(ProfileUpdateActivity.this, HomeActivity.class));
+        finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home2, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }

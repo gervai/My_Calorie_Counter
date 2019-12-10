@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/background"
+    android:background="@drawable/pavv"
     tools:context=".ProfileUpdateActivity">
 
     <ScrollView
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
                 android:layout_marginTop="50dp"
-                android:background="#77BCE2A1"
+                android:background="#5CFF5722"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -86,6 +86,17 @@
                         android:inputType="number"
                         android:layout_marginLeft="5dp"
                         android:textColor="#FFFFFF" />
+                    <TextView
+                    android:id="@+id/gendreTv"
+                    android:hint="Your gendre:"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25dp"
+                    android:inputType="number"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#FFFFFF" />
 
                 </LinearLayout>
 

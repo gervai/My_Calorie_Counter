@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@drawable/background"
+    android:background="@drawable/pavv"
     android:padding="20dp">
 
     <ImageView
@@ -54,12 +54,19 @@
         android:id="@+id/loginBtn"
         android:text="Login"
         android:layout_below="@+id/passwordTIL"
-        android:background="@drawable/custom_button"
         android:layout_centerHorizontal="true"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:drawableLeft="@drawable/ic_login_white"
-        android:padding="5dp"/>
+        android:padding="5dp"
+
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#FF26E9"
+        android:shadowDx="-1"
+        android:shadowDy="3"
+        android:shadowRadius="2"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/recoverPassTv"

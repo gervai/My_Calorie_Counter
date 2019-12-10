@@ -16,11 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileUpdateActivity"></activity>
+        <activity android:name=".GoogleFitActivity"></activity>
+        <activity android:name=".EditFoodActivity" />
+        <activity android:name=".AddFoodActivity" />
+        <activity android:name=".ProfileUpdateActivity" />
         <activity android:name=".FoodDiaryActivity" />
-        <activity android:name=".ActivityListActivity" />
-        <activity android:name=".EditActivityActivity" />
-        <activity android:name=".AddActivityActivity" />
         <activity android:name=".EditProductActivity" />
         <activity android:name=".AddProductActivity" />
         <activity android:name=".ProductListActivity" />

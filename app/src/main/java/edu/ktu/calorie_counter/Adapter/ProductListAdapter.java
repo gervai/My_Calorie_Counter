@@ -44,7 +44,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public void onBindViewHolder(@NonNull MyHolder myHolder, int position) {
         Listdata data= productList.get(position);
         myHolder.title.setText(data.getTitle());
-        myHolder.desc.setText(data.getDesc());
+        myHolder.calorie.setText(data.getCalorie());
     }
 
     @Override
@@ -53,12 +53,12 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     }
 
     class  MyHolder extends RecyclerView.ViewHolder  {
-        TextView title,desc;
+        TextView title,calorie;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.title);
-            desc=itemView.findViewById(R.id.desc);
+            calorie=itemView.findViewById(R.id.calorie);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -66,7 +66,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
                     Intent i=new Intent(context, EditProductActivity.class);
                     i.putExtra("id",listdata.id);
                     i.putExtra("title",listdata.title);
-                    i.putExtra("desc",listdata.desc);
+                    i.putExtra("calorie",listdata.calorie);
                     context.startActivity(i);
                     }
             });

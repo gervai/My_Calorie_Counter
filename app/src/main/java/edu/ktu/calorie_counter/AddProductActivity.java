@@ -19,8 +19,8 @@ import edu.ktu.calorie_counter.Model.Listdata;
 
 public class AddProductActivity extends AppCompatActivity {
 
-    EditText title,desc;
-    String titlesend,descsend;
+    EditText title,calorie;
+    String titlesend,caloriesend;
     private DatabaseReference mDatabase;
 
     @Override
@@ -29,25 +29,24 @@ public class AddProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_product);
 
         title=findViewById(R.id.title);
-        desc=findViewById(R.id.desc);
+        calorie=findViewById(R.id.calorie);
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
     public void AddProduct(View view) {
         titlesend=title.getText().toString();
-        descsend=desc.getText().toString();
-        if(TextUtils.isEmpty(titlesend) || TextUtils.isEmpty(descsend)){
+        caloriesend=calorie.getText().toString();
+        if(TextUtils.isEmpty(titlesend) || TextUtils.isEmpty(caloriesend)){
             return;
         }
-        AddProduct(titlesend,descsend);
+        AddProduct(titlesend,caloriesend);
 
     }
 
-    private void AddProduct(String titlesend, String descsend)
+    private void AddProduct(String titlesend, String caloriesend)
     {
-
         String id=mDatabase.push().getKey();
-        Listdata listdata = new Listdata(id,titlesend, descsend);
+        Listdata listdata = new Listdata(id,titlesend, caloriesend);
         mDatabase.child("Product").child(id).setValue(listdata).
                 addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

@@ -16,9 +16,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class HomeActivity extends AppCompatActivity {
 
-    CardView cardProfile,cardCalculator, cardProductList, cardActivityList, cardFoodDiary;
+    CardView cardProfile,cardCalculator, cardProductList, cardGoogleFit, cardFoodDiary, cardShare;
 
     FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class HomeActivity extends AppCompatActivity {
         cardProfile = findViewById(R.id.cardViewProfile);
         cardCalculator = findViewById(R.id.cardCalculator);
         cardProductList = findViewById(R.id.cardProductList);
-        cardActivityList = findViewById(R.id.cardActivitiesList);
         cardFoodDiary = findViewById(R.id.cardFoodDiary);
+        cardGoogleFit = findViewById(R.id.cardGoogleFit);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -54,19 +55,38 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        cardActivityList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityList();
-            }
-        });
-
         cardFoodDiary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFoodDiary();
             }
         });
+
+        cardGoogleFit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGoogleFit();
+            }
+        });
+
+        cardShare = findViewById(R.id.cardShare);
+
+        cardShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                share();
+            }
+        });
+    }
+
+    public void share(){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "Hi there! Join the Calorie Counter");
+        sendIntent.setType("text/plain");
+
+        Intent shareIntent = Intent.createChooser(sendIntent, null);
+        startActivity(shareIntent);
     }
 
     public void openMyAccount(){
@@ -84,13 +104,13 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivityList(){
-        Intent intent = new Intent(this, ActivityListActivity.class);
+    public void openFoodDiary(){
+        Intent intent = new Intent(this, FoodDiaryActivity.class);
         startActivity(intent);
     }
 
-    public void openFoodDiary(){
-        Intent intent = new Intent(this, FoodDiaryActivity.class);
+    public void openGoogleFit(){
+        Intent intent = new Intent(this, GoogleFitActivity.class);
         startActivity(intent);
     }
 
@@ -107,7 +127,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.home2, menu);
+        getMenuInflater().inflate(R.menu.home3, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

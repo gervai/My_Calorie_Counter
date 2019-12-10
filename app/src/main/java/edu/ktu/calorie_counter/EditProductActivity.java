@@ -20,8 +20,8 @@ import edu.ktu.calorie_counter.Model.Listdata;
 
 public class EditProductActivity extends AppCompatActivity {
 
-    EditText title,desc;
-    String titlesend,descsend;
+    EditText title, calorie;
+    String titlesend, caloriesend;
     private DatabaseReference mDatabase;
     private Listdata listdata;
     Button updates,delete;
@@ -36,13 +36,13 @@ public class EditProductActivity extends AppCompatActivity {
         final Intent i=getIntent();
 
         String gettitle=i.getStringExtra("title");
-        String getdesc=i.getStringExtra("desc");
+        String getcalorie=i.getStringExtra("calorie");
         final String id=i.getStringExtra("id");
         title=findViewById(R.id.title);
-        desc=findViewById(R.id.desc);
+        calorie=findViewById(R.id.calorie);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         title.setText(gettitle);
-        desc.setText(getdesc);
+        calorie.setText(getcalorie);
         updates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +62,8 @@ public class EditProductActivity extends AppCompatActivity {
     private void UpdateProduct(String id)
     {
         titlesend=title.getText().toString();
-        descsend=desc.getText().toString();
-        Listdata listdata = new Listdata(id,titlesend, descsend);
+        caloriesend=calorie.getText().toString();
+        Listdata listdata = new Listdata(id,titlesend, caloriesend);
         mDatabase.child("Product").child(id).setValue(listdata).
                 addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

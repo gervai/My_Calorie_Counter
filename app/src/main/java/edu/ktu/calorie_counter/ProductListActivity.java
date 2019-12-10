@@ -37,12 +37,11 @@ import java.util.List;
 import edu.ktu.calorie_counter.Adapter.ProductListAdapter;
 import edu.ktu.calorie_counter.Model.Listdata;
 
-public class ProductListActivity extends AppCompatActivity  {
+public class ProductListActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FirebaseAuth firebaseAuth;
     FirebaseDatabase firebaseDatabase;
-    SharedPreferences sharedPreferences;
     LinearLayoutManager linearLayoutManager;
     DatabaseReference databaseReference;
     private ProductListAdapter adapter;
@@ -59,8 +58,6 @@ public class ProductListActivity extends AppCompatActivity  {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Product list");
         firebaseAuth = FirebaseAuth.getInstance();
-
-        preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -97,31 +94,20 @@ public class ProductListActivity extends AppCompatActivity  {
                 startActivity(new Intent(getApplicationContext(), AddProductActivity.class));
             }
         });
-
-        sharedPreferences=getSharedPreferences("SortSettings", MODE_PRIVATE);
-        String mSorting = sharedPreferences.getString("Sort", "Ascending");
-
-        if(mSorting.equals("Ascending")){
-            Collections.sort(list, Listdata.By_TITLE_ASCENDING);
-        }
-        else if (mSorting.equals("Descending")){
-            Collections.sort(list, Listdata.By_TITLE_DESCENDING);
-        }
     }
 
     /*Atsijungimas*/
     private void checkUserStatus() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        if (user !=null){
-        }
-        else {
+        if (user != null) {
+        } else {
             startActivity(new Intent(ProductListActivity.this, MainActivity.class));
             finish();
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
@@ -144,23 +130,21 @@ public class ProductListActivity extends AppCompatActivity  {
     }
 
     private void search(String str) {
-        ArrayList<Listdata>myList = new ArrayList<>();
-        for(Listdata object : list)
-        {
-            if(object.getTitle().toLowerCase().contains(str.toLowerCase()))
-            {
+        ArrayList<Listdata> myList = new ArrayList<>();
+        for (Listdata object : list) {
+            if (object.getTitle().toLowerCase().contains(str.toLowerCase())) {
                 myList.add(object);
             }
         }
-        ProductListAdapter notesAdapter=new ProductListAdapter(myList, this);
+        ProductListAdapter notesAdapter = new ProductListAdapter(myList, this);
         recyclerView.setAdapter(notesAdapter);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.sorting){
-            showSortDialog();
+        if (id == R.id.home) {
+            goHome();
             return true;
         }
         if (id == R.id.action_logout) {
@@ -170,34 +154,10 @@ public class ProductListActivity extends AppCompatActivity  {
         return super.onOptionsItemSelected(item);
     }
 
-    private void showSortDialog() {
-        String[] sortOption = {"Ascending", "Descending"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sort by")
-                .setIcon(R.drawable.ic_action_sort)
-                .setItems(sortOption, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0) {
-
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("Sort", "Ascending");
-                            editor.apply();
-                            recreate();
-
-                        } else if (which == 1) {
-                            {
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString("Sort", "Descending");
-                                editor.apply();
-                                recreate();
-
-                            }
-                        }
-                    }
-                });
-            builder.show();
-        }
+    private void goHome() {
+        startActivity(new Intent(ProductListActivity.this, HomeActivity.class));
+        finish();
     }
+
+}
 
